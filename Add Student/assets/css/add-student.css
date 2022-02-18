@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+span {
+    color: #d83e3e;
+}
+
+form {
+    width: 940px;
+}
+
+.form-control, .form-select {
+    margin-top: -2px;
+}
+
+.btn {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    margin-right: -260px;
+}
+
+#errorDienThoai, #errorEmail, #errorCmnd {
+    display: none; 
+    color: red; 
+    margin-top: 5px;
+}

@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #6c757d;
+}
+
+.row input {
+    padding-right: 20px;
+}
+
+table, th, td {
+    border-collapse: collapse;
+}
+
+tr td {
+    border: 1px solid #6c757d;
+}
+
+th {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+td button {
+    border: none;
+    background: none;
+}
+
+.select {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.record-number {
+    width: 230px;
+}
+
+.record-label {
+    width: 80%;
+}
+
+.record-form {
+    width: 20%;
+}
+
+.add-btn {
+    background-color: #00d672;
+    color: #ffffff;
+    transition: all 0.3s ease-in;
+    border: 1px solid #fff;
+}
+
+.add-btn:hover {
+    background-color: #fff;
+    color: #00d672;
+    border: 1px solid #00d672;
+}
+
+.search-btn {
+    border: 2px solid #6c757d;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-btn:hover {
+    background-color: #00d672;
+    border: 2px solid #00d672;
+}
+
+.search-btn i {
+    transition: all 0.3s ease-in-out;
+}
+
+.search-btn:hover i {
+    color: #ffffff;
+}
