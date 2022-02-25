@@ -1,49 +1,47 @@
-let email = document.querySelector("#email");
-let password = document.querySelector("#password");
-let error_email = document.querySelector("#error-email");
-let error_password = document.querySelector("#error-password");
-let regex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+$(() => {
+    $('#form').submit(e => {
+        let email = $('#email').val().trim();
+        let password = $('#password').val().trim();
+        let regex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-function check() {
-    if(email.value.match(regex)) {
-        email.style.border = "1px solid green";
-        error_email.style.display = "none";
-    } else {
-        email.style.border = "1px solid red";
-        error_email.style.display = "block";
-    } 
+        if (email.length === 0) {
+            showError('Vui lòng nhập email');
+            e.preventDefault();
+        }
 
-    if(password.value.length < 8) {
-        password.style.border = "1px solid red";
-        error_password.style.display = "block";
-    } else {
-        password.style.border = "1px solid green";
-        error_password.style.display = "none";
-    }
+        else if (!regex.test(email)) {
+            showError('Email không hợp lệ');
+            e.preventDefault();
+        }
 
-    if(email.value == "") {
-        email.style.borderColor = "lightgrey";
-        error_email.style.display = "none";
-    }
+        else if (password.length === 0) {
+            showError('Vui lòng nhập password');
+            e.preventDefault();
+        }
 
-    if(password.value == "") {
-        password.style.borderColor = "lightgrey";
-        error_password.style.display = "none";
-    }
-}
+        else if(password.length < 6) {
+            showError('Password không hợp lệ');
+            e.preventDefault();
+        }
 
-function handleSubmit() {
-    if(email.value.match(regex) && password.value.length >= 8) {
-        console.log(email.value);
-        console.log(password.value);
-        swal({
-            title: "Congrats",
-            text: "You are logged in!",
-            icon: "success",
-            button: "Ok",
-          });
-    } 
-    else {
-        swal ( "Oops" ,  "Something went wrong!" ,  "error" );
-    }
+        else if (regex.test(email) && password.length >= 6) {
+            console.log(email);
+            console.log(password); 
+            swal({
+                title: "Chúc mừng",
+                text: "Bạn đã đăng nhập thành công!",
+                icon: "success",
+                }).then(ok => {
+                    if(ok) {
+                        window.location.href = "/List Student/list-student.html";
+                    }
+                })
+            e.preventDefault();
+        }
+    })
+})
+
+function showError(message) {
+    $('#errorMessage').html(message);
+    $('#errorMessage').show();
 }

@@ -36,14 +36,14 @@ div {
     margin-left: 200px;
 }
 
-button[type="button"] {
+button[type="submit"] {
     transition: all 0.3s ease-in-out;
     border: #ffffff;
     background: #030252; 
     color: #ffffff;
 }
 
-button[type="button"]:hover {
+button[type="submit"]:hover {
     box-shadow: inset 0 0 50px 0 #0c9dd6;  
     border-radius: 20px;
     color: #ffffff;
@@ -54,7 +54,7 @@ button[type="button"]:hover {
     outline: none;
 }
 
-#error-email, #error-password {
+#errorMessage {
     display: none;
     color: #ec0b0b;
     padding-bottom: 20px;

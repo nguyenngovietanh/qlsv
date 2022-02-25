@@ -11,7 +11,7 @@
     <body class="container-fluid">
         <header class="header d-flex justify-content-around align-items-center">
             <h2 class="m-3 fs-5">Danh sách sinh viên</h2>
-            <button class="add-btn rounded-pill m-4 py-2 px-3"> &plus; Thêm mới sinh viên</button>
+            <button class="add-btn rounded-pill m-4 py-2 px-3" onclick="addStudent()"> &plus; Thêm mới sinh viên</button>
         </header>
         <div class="row mb-3">
             <div class="col-sm-9 d-flex g-6">
@@ -41,7 +41,7 @@
         </div>
         <table class="table mt-5 text-center border border-collapse table-bordered" style="font-size: 15px;">
             <thead class="border border-secondary">
-              <tr class="bg-gradient" style="background-color: #00d672;">
+              <tr class="bg-gradient" style="background-color: #171263;">
                 <th>STT</th>
                 <th>Mã hồ sơ</th>
                 <th>Mã sinh viên</th>
@@ -130,7 +130,7 @@
           <div class="record d-flex justify-content-end">
             <div class="select m-auto">
                 <button class="bg-white border-0"><i class="fa-solid fa-angle-left"></i></button>
-                <button class="px-2 rounded-circle border-0" style="background-color: #00d672; color: #ffffff;">1</button>
+                <button class="px-2 rounded-circle border-0" style="background-color: #171263; color: #ffffff;">1</button>
                 <button class="bg-white border-0"><i class="fa-solid fa-angle-right"></i></button>
             </div>
             <div class="record-number d-flex position-absolute">
@@ -138,5 +138,7 @@
                 <input type="number" class="record-form mr-1" id="inputSoBanGhi" style="height: 100%;">
             </div>
           </div>
+          <script src="./assets/js/jquery-3.6.0.min.js"></script>
+          <script src="./assets/js/list-student.js"></script>
     </body>
 </html>

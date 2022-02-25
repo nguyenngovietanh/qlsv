@@ -1,70 +1,24 @@
-var arrInput = document.getElementsByTagName('input');
-for (var i = 0; i < arrInput.length; ++i) {
-  // ...
-}
-
-let maHoSo = arrInput[0].value;
-
-let maSinhVien = arrInput[1].value;
-
-let hoDem = arrInput[2].value;
-
-let ten = arrInput[3].value;
-
+let maHaSo = document.querySelector('#inputMaHoSo');
+let maSinhVien = document.querySelector('#inputMaSinhVien');
+let hoDem = document.querySelector('#inputHoDem');
+let ten = document.querySelector('#inputTen');
 let gioiTinh = document.querySelector('#inputGioiTinh');
+let ngaySinh = document.querySelector('#inputNgaySinh');
+let noiSinh = document.querySelector('#inputNoiSinh');
 
-let ngaySinh = arrInput[4].value;
-
-let noiSinh = arrInput[5].value;
-
-let danToc = arrInput[6].value;
-
-let tonGiao = arrInput[7].value;
-
-let soCmnd = arrInput[8].value;
-let error_cmnd = document.querySelector('#errorCmnd');
-
-let ngayCap = arrInput[9].value;
-
-let noiCap = arrInput[10].value;
-
-let dienThoai = arrInput[11].value;
+let dienThoai = document.querySelector('#inputSDT'); 
 let error_dienThoai = document.querySelector('#errorDienThoai');
 
-let email = arrInput[12].value;
+let email = document.querySelector('#inputEmail') ; 
 let error_email = document.querySelector('#errorEmail');
 
-let diaChi = arrInput[13].value;
-
-let ghiChu = arrInput[14].value;
-
-let trangThai = document.querySelector('#inputTrangThai');
-    
-// var inputs, index;
-
-// inputs = document.getElementsByTagName('input');
-// for (index = 0; index < inputs.length; ++index) {
-    
-// }
-
 let regex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+let arrInput;
 
 function check() {
-    // check CMND
-    if(soCmnd.value.length > 12) {
-        error_cmnd.style.display = "block";
-        soCmnd.style.borderColor = "red";
-    } else {
-        error_cmnd.style.display = "none";
-        soCmnd.style.border = "1px solid lightgrey";
-    }
-
-    if(soCmnd.value == "") {
-        soCmnd.style.borderColor = "lightgrey";
-    }
 
     // check SDT
-    if(dienThoai.value.length > 10) {
+    if (dienThoai.value.length > 10) {
         error_dienThoai.style.display = "block";
         dienThoai.style.borderColor = "red";
     } else {
@@ -72,61 +26,68 @@ function check() {
         dienThoai.style.border = "1px solid lightgrey";
     }
 
-    if(dienThoai.value == "") {
+    if (dienThoai.value == "") {
         dienThoai.style.borderColor = "lightgrey";
     }
 
     // check email 
-    if(email.value.match(regex)) {
+    if (email.value.match(regex)) {
         email.style.border = "1px solid lightgrey";
         error_email.style.display = "none";
     } else {
         email.style.border = "1px solid red";
         error_email.style.display = "block";
-    } 
+    }
 
-    if(email.value == "") {
+    if (email.value == "") {
         email.style.borderColor = "lightgrey";
         error_email.style.display = "none";
     }
 }
 
-function addStudent() {  
-    console.log(arrInput.value);
-    if(maHoSo.value == "" || maSinhVien.value == "" || hoDem.value == "" || 
-        ten.value == "" || gioiTinh.value == "" || ngaySinh.value == "" || 
+function addStudent() {
+    arrInput = [
+        {'Mã hồ sơ': maHaSo.value}, 
+        {'Mã sinh viên': maSinhVien.value},
+        {'Họ đệm': hoDem.value},
+        {'Tên': ten.value},
+        {'Giới tính': gioiTinh.value},
+        {'Ngày sinh': ngaySinh.value},
+        {'Nơi sinh': noiSinh.value},
+        {'Dân tộc': document.querySelector('#inputDanToc').value},
+        {'Tôn giáo': document.querySelector('#inputTonGiao').value},
+        {'CMND': document.querySelector('#inputCmnd').value},
+        {'Ngày Cấp': document.querySelector('#inputNgayCap').value},
+        {'Nơi cấp': document.querySelector('#inputNoiCap').value},
+        {'Số điện thoại': dienThoai.value},
+        {'Email': email.value},
+        {'Địa chỉ': document.querySelector('#inputDiaChi').value},
+        {'Ghi chú': document.querySelector('#inputGhiChu').value},
+        {'Trạng thái': document.querySelector('#inputTrangThai').value}
+    ]
+
+    if (maHaSo.value == "" || maSinhVien.value == "" ||
+        hoDem.value == "" || ten.value == "" ||
+        gioiTinh.value == "" || ngaySinh.value == "" ||
         noiSinh.value == "" || email.value == "") {
-            swal ( "Oops" ,  "Bạn chưa nhập đủ những ô bắt buộc" );
-    } 
-
-    // var inputs = document.getElementsByTagName('input');
-    // var i = [];
-    //     for (var i = 0; i < inputs.length; ++i) {
-    //         console.log(i);
-    //     }
-
-    // console.log(maHoSo.value);
-    // console.log(maSinhVien.value);
-    // console.log(hoDem.value);
-    // console.log(ten.value);
-    // console.log(gioiTinh.value);
-    // console.log(ngaySinh.value);
-    // console.log(noiSinh.value);
-    // console.log(danToc.value);
-    // console.log(tonGiao.value);
-    // console.log(soCmnd.value);
-    // console.log(ngayCap.value);
-    // console.log(noiCap.value);
-    // console.log(dienThoai.value);
-    // console.log(email.value);
-    // console.log(diaChi.value);
-    // console.log(ghiChu.value);
-    // console.log(trangThai.value);
-    // console.log(inputs.value);
-        // swal ({
-        //     title: "Congrats",
-        //     text: "You are logged in!",
-        //     icon: "success",
-        //     button: "Ok",
-        //   });        
+        swal({
+            icon: 'error',
+            text: 'Hãy nhập đủ thông tin bắt buộc!',
+            footer: '<a href="">Why do I have this issue?</a>'
+            })
+        }
+    else {
+        swal({
+            title: "Chúc mừng",
+            text: "Đã thêm sinh viên thành công!",
+            icon: "success",
+          }).then(ok => {
+            if(ok) {
+                window.location.reload();
+            }
+          })
+        for (let i = 0; i < arrInput.length; i++) {
+            console.log(arrInput[i]);
+        }
     }
+}
