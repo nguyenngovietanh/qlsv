@@ -69,14 +69,34 @@ function addStudent() {
     if (maHaSo.value == "" || maSinhVien.value == "" ||
         hoDem.value == "" || ten.value == "" ||
         gioiTinh.value == "" || ngaySinh.value == "" ||
-        noiSinh.value == "" || email.value == "") {
+        noiSinh.value == "" || dienThoai.value == "" || email.value == "") {
         swal({
             icon: 'error',
             text: 'Hãy nhập đủ thông tin bắt buộc!',
             footer: '<a href="">Why do I have this issue?</a>'
             })
         }
-    else {
+
+    else if (dienThoai.value.length > 10) {
+        swal({
+            icon: 'error',
+            text: 'Số điện thoại không hợp lệ!',
+            footer: '<a href="">Why do I have this issue?</a>'
+            })
+    }
+
+    else if (!email.value.match(regex)) {
+        swal({
+            icon: 'error',
+            text: 'Địa chỉ Email không hợp lệ!',
+            footer: '<a href="">Why do I have this issue?</a>'
+            })
+    }
+
+    else if (!maHaSo.value == "" && !maSinhVien.value == "" &&
+    !hoDem.value == "" && !ten.value == "" &&
+    !gioiTinh.value == "" && !ngaySinh.value == "" &&
+    !noiSinh.value == "" && dienThoai.value.length <= 10 && email.value.match(regex)) {
         swal({
             title: "Chúc mừng",
             text: "Đã thêm sinh viên thành công!",
