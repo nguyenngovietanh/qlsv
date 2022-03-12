@@ -27,6 +27,11 @@ td button {
     background: none;
 }
 
+.select button a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 .select {
     margin-left: auto;
     margin-right: auto;

@@ -30,8 +30,13 @@ form {
     margin-right: -260px;
 }
 
-#errorDienThoai, #errorEmail, #errorCmnd {
-    display: none; 
-    color: red; 
-    margin-top: 5px;
+label {
+    display: inline-block;
+    width: 150px;
+}
+
+.error {
+    display: inline-block;
+    color:red;
+    width: 200px;
 }

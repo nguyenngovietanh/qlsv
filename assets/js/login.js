@@ -33,7 +33,7 @@ $(() => {
                 icon: "success",
                 }).then(ok => {
                     if(ok) {
-                        window.location.href = "/List Student/list-student.html";
+                        window.location.href = "./list_student.php";
                     }
                 })
             e.preventDefault();
